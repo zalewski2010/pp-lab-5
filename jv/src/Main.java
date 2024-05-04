@@ -2,6 +2,7 @@ import company.beans.Person;
 import company.exceptions.InvalidAgeException;
 import company.implementations.EmailMessenger;
 import company.interfaces.Messenger;
+import company.utils.MathUtils;
 
 
 
@@ -23,8 +24,17 @@ public class Main {
             System.err.println("Oh no invalid age provided for person2: " + e.getMessage() + " Please provide age under 125");
         }
 
+        int num1 = 10;
+        int num2 = 5;
+
+        int sum = MathUtils.add(num1, num2);
+        System.out.println("Sum of " + num1 + " and " + num2 + " is: " + sum);
+
         Messenger messenger = new EmailMessenger();
         messenger.sendMessage("Hej. To email testowy");
+
+        Messenger messengerSum = new EmailMessenger();
+        messengerSum.sendMessage("The sum of " + num1 + " and " + num2 + " is: " + sum);
 
     }
 }
